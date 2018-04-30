@@ -1,0 +1,20 @@
+---
+
+- name: install inbox nodejs & npm
+  apt: name={{item}}
+  with_items:
+    - nodejs
+    - npm
+
+- name: install n
+  npm: name=n state=latest global=yes
+
+- name: check nodejs LTS version with n
+  shell: "n --lts"
+  register: nodejs_lts_latst_version
+
+- name: install nodejs latest version with n
+  shell: "n {{nodejs_lts_latst_version.stdout}}"
+
+- name: remove inbox nodejs
+  apt: name=nodejs state=absent
