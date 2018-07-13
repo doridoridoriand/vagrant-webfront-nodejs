@@ -13,6 +13,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder './works', '/home/vagrant/works'
   config.vm.network 'private_network', ip: '192.168.33.10'
+  config.vm.network "forwarded_port", guest: 80,   host: 10080
+  config.vm.network "forwarded_port", guest: 8080, host: 18080
+  config.vm.network "forwarded_port", guest: 443,  host: 10443
 
   config.vm.provision 'shell', path: './provisioning/init.sh'
   config.vm.provision 'ansible' do |ansible|
