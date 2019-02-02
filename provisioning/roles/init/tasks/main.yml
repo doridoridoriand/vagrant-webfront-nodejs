@@ -3,3 +3,4 @@
 - include: nodejs.yml
 - include: nginx.yml
 - include: tools.yml
+- include: vim.yml

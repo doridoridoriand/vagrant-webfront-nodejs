@@ -1,0 +1,10 @@
+---
+
+- name: Add repository
+  apt_repository:
+    repo: ppa:jonathonf/vim
+
+- name: Update apt cache
+  apt:
+    name: vim
+    update_cache: yes
