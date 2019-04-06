@@ -9,7 +9,7 @@ Focused on a web front development written in Vagrant and Ansible.
 ## Minimum System Requirements
 - Vagrant >=2.0.0
 - Virtualbox >= 5.2
-- Ansible >= 2.5
+- Ansible >= 2.7
 
 ## How to use
 If Ansible is not installed on your computer, please use the following command to install it.

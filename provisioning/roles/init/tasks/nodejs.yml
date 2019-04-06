@@ -1,10 +1,8 @@
 ---
 
 - name: install inbox nodejs & npm
-  apt: name={{item}}
-  with_items:
-    - nodejs
-    - npm
+  apt:
+    name: ['nodejs', 'npm']
 
 - name: install n
   npm: name=n state=latest global=yes
