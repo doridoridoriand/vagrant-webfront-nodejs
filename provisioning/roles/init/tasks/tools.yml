@@ -10,17 +10,7 @@
     - id_rsa
     - id_rsa.pub
 
-- name: install essential packages via apt
-  apt: name={{item}} state=latest
-  with_items:
-    - wget
-    - lsof
-    - man
-    - tree
-    - dstat
-    - zsh
-    - openssl
-    - git
-    - tmux
-    - htop
-    - tig
+- name: Install essential packaget with apt
+  apt:
+    name: ['wget', 'lsof', 'man', 'tree', 'dstat', 'zsh', 'openssl', 'git', 'tmux', 'htop', 'tig']
+    state: latest
